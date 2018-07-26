@@ -29,21 +29,24 @@ class Dep {
 Object.keys(data).forEach(key => {
   let internalValue = data[key];
 
+  // Each property gets a dependency instance
   const dep = new Dep();
 
   // add property access hooks
   Object.defineProperty(data, key, {
     get() {
-      dep.depend();
+      dep.depend(); // Remember the target we're running
       return intervalValue;
     },
     set(newValue) {
       internalValue = newValue;
-      dep.notify();
+      dep.notify(); // Re-run stored functions
     }
   })
 })
 
+// My watcher no longer calls dep.depend
+// since that gets called from inside the getter
 function watcher(func) {
   target = func;
   target();
@@ -53,5 +56,11 @@ function watcher(func) {
 watcher(() => { 
   data.total = data.price * data.quantity;
 })
+
+console.log(data.total); // 10
+data.price = 10;
+console.log(data.total); // 20
+data.quantity = 3;
+console.log(data.total) // 30
 ```
 
