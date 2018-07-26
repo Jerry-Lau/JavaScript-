@@ -63,4 +63,3 @@ console.log(data.total); // 20
 data.quantity = 3;
 console.log(data.total) // 30
 ```
-
