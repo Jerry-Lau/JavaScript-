@@ -1,12 +1,28 @@
 # React Design Principles
 
+
+### Meet React
+- A library for creating user interfaces.
+- Renders your UI and responds to events.
+- AKA: the V in MVC.
+
+### Rethinking best practices
+- Prerequisite
+  Combine DOM generation and display logic.
+- React's design
+  Re-render the whole app on every update.
+- React's implementation
+  Virtual DOM and synthetic events.
+
 ### 1.Building components, not templates
 
 - React Component = A highly cohesive building block for UIs loosely coupled with other components.
 
 - React components are reusable, composable and unit testable.
 
-### 2.Re-render the whole app on every update
+- Framework cannot know how to separate your concerns for you, it should only provide powerful and expressive tools for you to do it correctly. The tool is React component.
+
+### 2.Re-render the whole app on every update (the key design decision that makes React awesome)
 
 - With React, when data changes, React re-renders the entire component. That is, React components are idempotent funcitons. They describe your UI at any point in time, just like a server-rendered app.
 
@@ -18,7 +34,7 @@
 
 - No more explicit DOM operations - everything is declarative.
 
-- Re-rendering on every change ? that seems expensive.
+- Re-rendering on every change? that seems expensive.
 
 ### 3.Virtual DOM
 #### Makes re-rendering on every change fast.
