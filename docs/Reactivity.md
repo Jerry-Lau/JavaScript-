@@ -2,8 +2,12 @@
 
 ```javascript
 let data = { price: 5, quantity: 2 };
+// every target is a dependency, which depends on the state.
+// and when the state changes, the dependencies get notified automatically.
 let target = null;
 
+// 一个 Dep 类用来实现存储和通知依赖
+// 实现了一个标准的观察者模式 Observer pattern
 class Dep {
   constructor() {
     // store the targets that are dependent, and should be run when notify is called
@@ -27,6 +31,7 @@ Object.keys(data).forEach(key => {
 
   const dep = new Dep();
 
+  // add property access hooks
   Object.defineProperty(data, key, {
     get() {
       dep.depend();
