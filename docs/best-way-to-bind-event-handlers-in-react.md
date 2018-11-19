@@ -1,4 +1,5 @@
 ## React 应用中，事件绑定的最佳实践
+(https://medium.freecodecamp.org/the-best-way-to-bind-event-handlers-in-react-282db2cf1530)
 
 ### 1.在 JSX 中动态绑定
 
