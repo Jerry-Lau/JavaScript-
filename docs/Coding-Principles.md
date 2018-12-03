@@ -4,4 +4,4 @@
 
 2. Separatation of Concerns.
 
-3. Don't Repeat Yourself.
+3. Don't Repeat Yourself. (DRY)
